@@ -8,9 +8,21 @@
   function MainController (dataFactory) {
     var vm = this;
     vm.characters = dataFactory
-    vm.info = vm.characters["info"]
-    console.log(vm.characters["info"]);
 
+    $.getJSON('../characters.json', function (data) {
+      console.log(data);
+      vm.people = data;
+      vm.deadCharacters = searchBy('dead');
+      vm.married = searchBy('marriage')
+    })
+
+    function searchBy(searchable) {
+      vm.results = [];
+      vm.people.forEach(function(person) {
+        person[searchable] ? vm.results.push(person) : console.log('nope');
+      })
+      return vm.results;
+    }
 
 
   }

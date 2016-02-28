@@ -1,16 +1,9 @@
-<h1>Hello Kate</h1>
-<ul ng-repeat="char in vm.characters['info']">
-  <li class="text-info">
-    <ul>
-      <li class="text-warning">{{char.name}}</li>
-      <li>Parents: {{char.parents}} </li>
-      <li>Siblings: {{char.siblings}} </li>
-      <li>Marriage: {{char.marriage}} </li>
-      <li>Lovers: {{char.lovers}} </li>
-      <li>Children: {{char.children}} </li>
-      <li>Occupation: {{char.occupation}} </li>
-      <li>Are they dead? {{char.dead}} </li>
-      <li>How they died: {{char.mannerOfDeath}} </li>
-    </ul>
-  </li>
-</ul>
+<h3>What characters have died?</h3>
+<p class="text-info" ng-repeat="character in vm.deadCharacters">
+  {{ character.name }}
+</p>
+
+<h3>What characters are married?</h3>
+<p class="text-primary" ng-repeat="character in vm.married">
+  {{ character.name }}
+</p>
