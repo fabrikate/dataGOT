@@ -41,6 +41,7 @@ CREATE (Elia:Martell {name:'Elia Martell', occupation:'Princess of Westeros', de
 CREATE (JonA:Arryn {name:'Jon Arryn', occupation:'Hand of the King', dead:true, mannerOfDeath:'Posioned', personResp4Death:'Lysa Arryn'})
 CREATE (Theon:Greyjoy {name:'Theon Greyjoy', occupation:'Servant of Ramsay Bolton', dead:false})
 CREATE (Sandor:Glegane {name:'Sandor Clegane', occupation:'Outlaw', dead:true, mannerOfDeath:'Killed in battle'})
+CREATE (Gregor:Glegane {name:'Gregor Clegane', occupation:'Lannister Bannerman', dead:false})
 CREATE (Barriston:Selmy {name:'Barriston Selmy', occupation:'Commander of Queensguard', dead:'book:no, series:yes', mannerOfDeath:'Killed in battle', houseResp4Death:'Sons of the Harpy'})
 CREATE (Melisandre:RedGod {name:'Melisandre', occupation:'Red Priestess', dead:false})
 CREATE (Shae:NoName {name:'Shae', occupation:'Hand maiden to Sansa Stark', dead:true, mannerOfDeath:"Killed in Tywin Lannister's bed"})
@@ -66,6 +67,7 @@ CREATE
 (Ned)-[:ALLEGIANT_TO]->(Robert),
 (Catelyn)-[:SIBLING]->(Lysa),
 (Lysa)-[:KILLED]->(JonA),
+(Petyr)-[:KILLED]->(Lysa),
 (Ned)-[:PARENT]->(Robb),
 (Ned)-[:PARENT]->(Jon),
 (Ned)-[:PARENT]->(Sansa),
@@ -79,6 +81,7 @@ CREATE
 (Robb)-[:SIBLING]->(Rickon),
 (Samwell)-[:ALLEGIANT_TO]->(Jon),
 (Jon)-[:ALLEGIANT_TO]->(Jeor),
+(Theon)-[:ALLEGIANT_TO]->(Ramsay),
 
 (Tywin)-[:PARENT]->(Cersei),
 (Tywin)-[:PARENT]->(Jaime),
@@ -89,6 +92,9 @@ CREATE
 (Cersei)-[:PARENT]->(Joffery),
 (Cersei)-[:PARENT]->(Myrcella),
 (Cersei)-[:PARENT]->(Tommen),
+(Jaime)-[:PARENT]->(Joffery),
+(Jaime)-[:PARENT]->(Myrcella),
+(Jaime)-[:PARENT]->(Tommen),
 (Cersei)-[:KILLED]->(Robert),
 (Tyrion)-[:KILLED]->(Tywin),
 (Tyrion)-[:LOVER]->(Shae),
@@ -98,6 +104,12 @@ CREATE
 (Tommen)-[:MARRIED]->(Margaery),
 (Joffery)-[:SIBLING]->(Myrcella),
 (Joffery)-[:SIBLING]->(Tommen),
+(Gregor)-[:KILLED]->(Oberyn),
+(Gregor)-[:KILLED]->(Elia),
+(Gregor)-[:SIBLING]->(Sandor),
+(Gregor)-[:ALLEGIANT_TO]->(Tywin),
+(Gregor)-[:ALLEGIANT_TO]->(Cersei),
+(Robert)-[:KILLED]->(Rhaegar),
 
 (Robert)-[:MARRIED]->(Cersei),
 (Robert)-[:SIBLING]->(Stannis),
@@ -111,6 +123,9 @@ CREATE
 (Roose)-[:KILLED]->(Robb),
 (Roose)-[:PARENT]->(Ramsay),
 (Walder)-[:KILLED]->(Catelyn),
+(Petyr)-[:KILLED]->(Joffery),
+(Olenna)-[:KILLED]->(Joffery),
+(Daario)-[:ALLEGIANT_TO]->(Daenerys),
 
 (Olenna)-[:GRANDPARENT]->(Margaery),
 (Olenna)-[:GRANDPARENT]->(Loras),
