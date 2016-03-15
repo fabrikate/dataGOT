@@ -1,4 +1,4 @@
-CREATE (Ned:Stark {name:'Ned Stark', occupation:'Hand to King Robert, Warden of the North', dead:true, mannerOfDeath:'Beheaded for treason', personResp4Death:'Joffery Baratheon'})
+CREATE (Ned:Stark {name:'Ned Stark', occupation:'Hand of the King', dead:true, mannerOfDeath:'Beheaded for treason', personResp4Death:'Joffery Baratheon'})
 CREATE (Lyanna:Stark {name:'Lyanna Stark', occupation:'Highborn Lady', dead:true, mannerOfDeath:'Unknown'})
 CREATE (Catelyn:Stark {name:'Catelyn Stark', occupation:'Wardeness of the North', dead:true, mannerOfDeath:'Killed at Red Wedding', personResp4Death: 'Walder Frey', houseResp4Death:'Lannister'})
 CREATE (Robb:Stark {name:'Robb Stark', occupation:'King in the North', dead:true, mannerOfDeath:'Killed at Red Wedding', personResp4Death: 'Walder Frey', houseResp4Death:'Lannister'})
@@ -11,7 +11,7 @@ CREATE (Roose:Bolton {name:'Roose Bolton', occupation:'Warden of the North', dea
 CREATE (Ramsay:Bolton {name:'Ramsay Bolton', occupation:'Natural Born son', dead:false})
 CREATE (Walder:Frey {name:'Walder Frey', occupation:'Lord of Riverrun', dead:false})
 
-CREATE (Tywin:Lannister {name:'Tywin Lannister', occupation:'Hand to King Aerys, Joffery, Tommen', dead:true, mannerOfDeath:'Killed by crossbow in the privy', personResp4Death:'Tyrion Lannister'})
+CREATE (Tywin:Lannister {name:'Tywin Lannister', occupation:'Hand of the King', dead:true, mannerOfDeath:'Killed by crossbow in the privy', personResp4Death:'Tyrion Lannister'})
 CREATE (Cersei:Lannister {name:'Cersei Lannister', occupation:'Queen Regent', dead:false})
 CREATE (Jaime:Lannister {name:'Jaime Lannister', occupation:'Commander of the Kingsguard', dead:false})
 CREATE (Tyrion:Lannister {name:'Tyrion Lannister', occupation:'Master of Coin', dead:false})
@@ -29,7 +29,7 @@ CREATE (Loras:Tyrell {name:'Loras Tyrell', occupation:'Highgarden heir / Kingsgu
 CREATE (Brienne:Tarth {name:'Brienne Tarth', occupation:'Sworn Shield of Catelyn Stark', dead:false})
 CREATE (Petyr:Baelish {name:'Petyr Baelish', occupation:'Master of Coin', dead:false})
 CREATE (Daenerys:Targaryen {name:'Daenerys Targaryen', occupation:'Queen of Myreen', dead:false})
-CREATE (Rhaegal:Targaryen {name:'Rhaegal Targaryen', occupation:'Prince of Westeros', dead:true, mannerOfDeath:'Killed in battle', personResp4Death:'Robert Baratheon', houseResp4Death:'Baratheon'})
+CREATE (Rhaegar:Targaryen {name:'Rhaegar Targaryen', occupation:'Prince of Westeros', dead:true, mannerOfDeath:'Killed in battle', personResp4Death:'Robert Baratheon', houseResp4Death:'Baratheon'})
 CREATE (Viserys:Targaryen {name:'Viserys Targaryen', occupation:'Beggar King', dead:true, mannerOfDeath:'Hot Gold poured over head', personResp4Death:'Khal Drogo'})
 CREATE (Jorah:Mormont {name:'Jorah Mormont', occupation:'disgraced Queensguard of Daenerys', dead:false})
 CREATE (Jeor:Mormont {name:'Jeor Mormont', occupation:"Lord Commander of the Night's Watch", dead:true, mannerOfDeath:'Stabbed in mutany', houseResp4Death:"Night's Watch"})
@@ -38,12 +38,34 @@ CREATE (Lysa:Arryn {name:'Lysa Arryn', occupation:'Lady of the Veil', dead:true,
 CREATE (Oberyn:Martell {name:'Oberyn Martell', occupation:'Prince of Dorne', dead:true, mannerOfDeath:'Head crushed during Trial by Combat', personResp4Death:'Gregor Clegane'})
 CREATE (Elia:Martell {name:'Elia Martell', occupation:'Princess of Westeros', dead:true, mannerOfDeath:'Killed in Raid of Kings Landing', personResp4Death:'Gregor Clegane', houseResp4Death:'Lannister'})
 
+CREATE (JonA:Arryn {name:'Jon Arryn', occupation:'Hand of the King', dead:true, mannerOfDeath:'Posioned', personResp4Death:'Lysa Arryn'})
+CREATE (Theon:Greyjoy {name:'Theon Greyjoy', occupation:'Servant of Ramsay Bolton', dead:false})
+CREATE (Sandor:Glegane {name:'Sandor Clegane', occupation:'Outlaw', dead:true, mannerOfDeath:'Killed in battle'})
+CREATE (Barriston:Selmy {name:'Barriston Selmy', occupation:'Commander of Queensguard', dead:'book:no, series:yes', mannerOfDeath:'Killed in battle', houseResp4Death:'Sons of the Harpy'})
+CREATE (Melisandre:RedGod {name:'Melisandre', occupation:'Red Priestess', dead:false})
+CREATE (Shae:NoName {name:'Shae', occupation:'Hand maiden to Sansa Stark', dead:true, mannerOfDeath:"Killed in Tywin Lannister's bed"})
+CREATE (Daavos:Seaworth {name:'Daavos Seaworth', occupation:'Hand to the King', dead:false})
+CREATE (Shireen:Baratheon {name:'Shireen Baratheon', occupation:'Highborn lady', dead:'book:no, series:yes', mannerOfDeath:'Burned alive', personResp4Death:'Melisandre'})
+CREATE (Khal:Drogo {name:'Khal Drogo', occupation:'Dothraki Khal', dead:true, mannerOfDeath:'Infected wound'})
+CREATE (Daario:Naharis {name:'Daario Naharis', occupation:'Small Council', dead:false})
+
 CREATE
+(Lysa)-[:MARRIED]->(JonA),
+(Ned)-[:WARD]->(JonA),
+(Joffery)-[:KILLED]->(Ned),
+(Theon)-[:WARD]->(Ned),
+(Melisandre)-[:LOVER]->(Stannis),
+(Melisandre)-[:ALLEGIANT_TO]->(Stannis),
+(Daavos)-[:ALLEGIANT_TO]->(Stannis),
+(Melisandre)-[:KILLED]->(Shireen),
+(Stannis)-[:PARENT]->(Shireen),
+
 (Ned)-[:MARRIED]->(Catelyn),
 (Ned)-[:SIBLING]->(Lyanna),
-(Rhaegal)-[:LOVER]->(Lyanna),
-(Ned)-[:LOYAL_TO]->(Robert),
+(Rhaegar)-[:LOVER]->(Lyanna),
+(Ned)-[:ALLEGIANT_TO]->(Robert),
 (Catelyn)-[:SIBLING]->(Lysa),
+(Lysa)-[:KILLED]->(JonA),
 (Ned)-[:PARENT]->(Robb),
 (Ned)-[:PARENT]->(Jon),
 (Ned)-[:PARENT]->(Sansa),
@@ -55,8 +77,8 @@ CREATE
 (Robb)-[:SIBLING]->(Arya),
 (Robb)-[:SIBLING]->(Bran),
 (Robb)-[:SIBLING]->(Rickon),
-(Samwell)-[:LOYAL_TO]->(Jon),
-(Jon)-[:LOYAL_TO]->(Jeor),
+(Samwell)-[:ALLEGIANT_TO]->(Jon),
+(Jon)-[:ALLEGIANT_TO]->(Jeor),
 
 (Tywin)-[:PARENT]->(Cersei),
 (Tywin)-[:PARENT]->(Jaime),
@@ -69,6 +91,9 @@ CREATE
 (Cersei)-[:PARENT]->(Tommen),
 (Cersei)-[:KILLED]->(Robert),
 (Tyrion)-[:KILLED]->(Tywin),
+(Tyrion)-[:LOVER]->(Shae),
+(Tyrion)-[:KILLED]->(Shae),
+(Tywin)-[:LOVER]->(Shae),
 (Joffery)-[:MARRIED]->(Margaery),
 (Tommen)-[:MARRIED]->(Margaery),
 (Joffery)-[:SIBLING]->(Myrcella),
@@ -79,8 +104,10 @@ CREATE
 (Robert)-[:SIBLING]->(Renly),
 (Stannis)-[:SIBLING]->(Renly),
 (Stannis)-[:KILLED]->(Renly),
+(Brienne)-[:KILLED]->(Stannis),
 (Renly)-[:MARRIED]->(Margaery),
 
+(Walder)-[:KILLED]->(Robb),
 (Roose)-[:KILLED]->(Robb),
 (Roose)-[:PARENT]->(Ramsay),
 (Walder)-[:KILLED]->(Catelyn),
@@ -89,12 +116,16 @@ CREATE
 (Olenna)-[:GRANDPARENT]->(Loras),
 (Margaery)-[:SIBLING]->(Loras),
 (Petyr)-[:MARRIED]->(Lysa),
-(Rhaegal)-[:MARRIED]->(Elia),
-(Rhaegal)-[:SIBLING]->(Daenerys),
-(Rhaegal)-[:SIBLING]->(Viserys),
+(Rhaegar)-[:MARRIED]->(Elia),
+(Rhaegar)-[:SIBLING]->(Daenerys),
+(Rhaegar)-[:SIBLING]->(Viserys),
 (Daenerys)-[:SIBLING]->(Viserys),
+(Daenerys)-[:MARRIED]->(Khal),
+(Khal)-[:KILLED]->(Viserys),
+(Barriston)-[:ALLEGIANT_TO]->(Daenerys),
+(Daenerys)-[:LOVER]->(Daario),
 (Jeor)-[:PARENT]->(Jorah),
-(Jorah)-[:LOYAL_TO]->(Daenerys),
+(Jorah)-[:ALLEGIANT_TO]->(Daenerys),
 (Oberyn)-[:SIBLING]->(Elia),
-(Brienne)-[:LOYAL_TO]->(Renly),
-(Brienne)-[:LOYAL_TO]->(Catelyn)
+(Brienne)-[:ALLEGIANT_TO]->(Renly),
+(Brienne)-[:ALLEGIANT_TO]->(Catelyn)
