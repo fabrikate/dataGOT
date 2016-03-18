@@ -143,4 +143,5 @@ CREATE
 (Jorah)-[:ALLEGIANT_TO]->(Daenerys),
 (Oberyn)-[:SIBLING]->(Elia),
 (Brienne)-[:ALLEGIANT_TO]->(Renly),
-(Brienne)-[:ALLEGIANT_TO]->(Catelyn)
+(Brienne)-[:ALLEGIANT_TO]->(Catelyn),
+(Barriston)-[:ALLEGIANT_TO]->(Robert)
