@@ -345,11 +345,11 @@
   {
     "name" : "Sandor Clegane",
     "parents" : "",
-    "siblings" : "Glegane Clegane",
+    "siblings" : "Gregor Clegane",
     "marriage" : "",
     "lovers" : "",
     "children" : "",
-    "dead" : true,
-    "mannerOfDeath" : "killed in combat"
+    "dead" : false,
+    "mannerOfDeath" : ""
   }
 ]
