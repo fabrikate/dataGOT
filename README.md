@@ -1,4 +1,4 @@
-Steps to View with Neo4js
+Steps to View with Neo4js Sandbox:
 
 
 -- Download Neo4js
