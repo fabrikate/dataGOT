@@ -1,12 +1,13 @@
 CREATE (Ned:Stark {name:'Ned Stark', occupation:'Hand of the King', dead:true, mannerOfDeath:'Beheaded for treason', personResp4Death:'Joffery Baratheon'})
 CREATE (Lyanna:Stark {name:'Lyanna Stark', occupation:'Highborn Lady', dead:true, mannerOfDeath:'Complications of Childbirth'})
+CREATE (Benjen:Stark {name:'Benjen Stark', occupation:"First Ranger of the Night's Watch / Cold Hands", dead: true, resurrected: true, mannerOfDeath: 'White Walker ambush'})
 CREATE (Catelyn:Stark {name:'Catelyn Stark', occupation:'Wardeness of the North', dead:true, mannerOfDeath:'Killed at Red Wedding', personResp4Death: 'Walder Frey', houseResp4Death:'Lannister'})
-CREATE (Robb:Stark {name:'Robb Stark', occupation:'King in the North', dead:true, mannerOfDeath:'Killed at Red Wedding', personResp4Death: 'Walder Frey', houseResp4Death:'Lannister'})
+CREATE (Robb:Stark {name:'Robb Stark', occupation:'King in the North', dead:true, mannerOfDeath:'Killed at Red Wedding', personResp4Death: 'Walder Frey', houseResp4Death:'Lannister', crownedRoyal: true})
 CREATE (Sansa:Stark {name:'Sansa Stark', occupation:'Highborn Lady', dead:false})
 CREATE (Arya:Stark {name:'Arya Stark', occupation:'Faceless Man in training', dead:false})
 CREATE (Bran:Stark {name:'Bran Stark', occupation:'Three eyed raven in training', dead:false})
 CREATE (Rickon:Stark {name:'Rickon Stark', occupation:'Highborn Boy', dead:true, mannerOfDeath:'Killed before battle of the bastards', personResp4Death: 'Ramsay Bolton'})
-CREATE (Jon:Snow {name:'Jon Snow', occupation:"King in the North", dead:false, resurrected: true, mannerOfDeath:'Stabbed by mutaniers', houseResp4Death:"Night's Watch"})
+CREATE (Jon:Snow {name:'Jon Snow', occupation:"King in the North", dead:false, resurrected: true, mannerOfDeath:'Stabbed by mutaniers', houseResp4Death:"Night's Watch", crownedRoyal: true})
 CREATE (Roose:Bolton {name:'Roose Bolton', occupation:'Warden of the North', dead:true, mannerOfDeath:'Stabbed by son, Ramsay'})
 CREATE (Ramsay:Bolton {name:'Ramsay Bolton', occupation:'Natural Born son', dead:true, mannerOfDeath: 'Eaten by his Dogs', houseResp4Death: 'Stark'})
 CREATE (Walder:Frey {name:'Walder Frey', occupation:'Lord of Riverrun', dead:true, mannerOfDeath: 'Throat slit', personResp4Death: 'Stark'})
@@ -48,6 +49,7 @@ CREATE (Daavos:Seaworth {name:'Daavos Seaworth', occupation:'Hand to the King', 
 CREATE (Shireen:Baratheon {name:'Shireen Baratheon', occupation:'Highborn lady', dead:'book:no, series:yes', mannerOfDeath:'Burned alive', personResp4Death:'Melisandre'})
 CREATE (Khal:Drogo {name:'Khal Drogo', occupation:'Dothraki Khal', dead:true, mannerOfDeath:'Infected wound'})
 CREATE (Daario:Naharis {name:'Daario Naharis', occupation:'Small Council of Mereen', dead:false})
+CREATE (Walda:Bolton {name:'Walda Bolton', occupation: 'Wardeness of the North', dead:true, mannerOfDeath: 'Attacked by Dogs', personResp4Death: 'Ramsay Bolton'})
 
 CREATE
 (Lysa)-[:MARRIED]->(JonA),
@@ -56,7 +58,9 @@ CREATE
 (Theon)-[:WARD]->(Ned),
 (Melisandre)-[:LOVER]->(Stannis),
 (Melisandre)-[:ALLEGIANT_TO]->(Stannis),
+(Melisandre)-[:ALLEGIANT_TO]->(Jon),
 (Daavos)-[:ALLEGIANT_TO]->(Stannis),
+(Daavos)-[:ALLEGIANT_TO]->(Jon),
 (Melisandre)-[:KILLED]->(Shireen),
 (Stannis)-[:PARENT]->(Shireen),
 
@@ -145,3 +149,10 @@ CREATE
 (Brienne)-[:ALLEGIANT_TO]->(Renly),
 (Brienne)-[:ALLEGIANT_TO]->(Catelyn),
 (Barriston)-[:ALLEGIANT_TO]->(Robert)
+
+(Cersei)-[:KILLED]->(Margaery),
+(Cersei)-[:KILLED]->(Loras),
+(Arya)-[:KILLED]->(Walder),
+(Ramsay)-[:KILLED]->(Roose),
+(Ramsay)-[:KILLED]->(Walda),
+(Ramsay)-[:KILLED]->(Rickon),
