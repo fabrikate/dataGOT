@@ -1,3 +1,6 @@
+// alive state as an integer ( 3 would be alive, dead, brought back)
+// add HODOR
+
 CREATE (Ned:Stark {name:'Ned Stark', occupation:'Hand of the King', dead:true, mannerOfDeath:'Beheaded for treason', personResp4Death:'Joffery Baratheon'})
 CREATE (Lyanna:Stark {name:'Lyanna Stark', occupation:'Highborn Lady', dead:true, mannerOfDeath:'Complications of Childbirth'})
 CREATE (Benjen:Stark {name:'Benjen Stark', occupation:"First Ranger of the Night's Watch / Cold Hands", dead: true, resurrected: true, mannerOfDeath: 'White Walker ambush'})
