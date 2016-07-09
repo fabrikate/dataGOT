@@ -1,0 +1,20 @@
+{
+  "name": "dataofthrones",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabrikate/dataGOT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabrikate/dataGOT/issues"
+  },
+  "homepage": "https://github.com/fabrikate/dataGOT#readme"
+}

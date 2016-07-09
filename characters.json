@@ -1,7 +1,7 @@
 [
   {
     "name": "Ned Stark",
-    "parents" : "Rickon Stark",
+    "parents" : "Rickard Stark",
     "siblings" : ["Brandon Stark", "Lyanna Stark", "Benjen Stark"],
     "marriage" : "Catelyn Tully",
     "lovers" : "",
@@ -16,7 +16,7 @@
     "siblings" : ["Lysa Arryn", "Edmure Tully"],
     "marriage" : "Ned Stark",
     "lovers" : "",
-    "children" : ["Robb Stark", "Jon Snow", "Sansa Stark", "Arya Stark", "Bran Stark", "Rickon Stark"],
+    "children" : ["Robb Stark", "Sansa Stark", "Arya Stark", "Bran Stark", "Rickon Stark"],
     "occupation": "Wardeness of the North",
     "dead": true,
     "mannerOfDeath": "Throat slit at red wedding"
@@ -125,7 +125,7 @@
     "parents" : "",
     "siblings" : "Kevin Lannister",
     "marriage" : "Joanna Lannister",
-    "lovers" : "Shay",
+    "lovers" : "Shae",
     "children" : ["Jamie Lannister", "Cersei Lannister", "Tyrion Lannister"],
     "occupation" : ["Warden of the West", "Hand of the King"],
     "dead" : true,
@@ -158,7 +158,7 @@
     "parents" : ["Tywin Lannister", "Joanna Lannister"],
     "siblings" : ["Jamie Lannister", "Cersei Lannister"],
     "marriage" : ["Tyisha", "Sansa Stark"],
-    "lovers" : "Shay",
+    "lovers" : "Shae",
     "children" : "",
     "dead" : false,
     "mannerOfDeath" : ""
